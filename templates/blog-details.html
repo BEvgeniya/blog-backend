@@ -1,6 +1,7 @@
 {% extends 'blog-base.html' %}
 {% block title %}{{post.title}} - Blog Details{% endblock %}
 {% block content %}
+{% load static %}
 <!--================ Hero sm Banner start =================-->
 <section class="mb-30px">
   <div class="container">
@@ -27,6 +28,8 @@
         <div class="main_blog_details">
           {% if post.image_url %}
             <img class="img-fluid" src="{{post.image_url}}" alt="Post image">
+          {% else %}
+            <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="Post image">
           {% endif %}
           <h4>{{post.title}} </h4>
           <div class="user_details">
